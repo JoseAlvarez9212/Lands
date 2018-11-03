@@ -1,58 +1,111 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Lands.Views.LoginPage">
+             x:Class="Lands.Views.LoginPage"
+             Title="Login"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <StackLayout 
+        <ScrollView>
+            <StackLayout 
             Padding="10,20,10,5">
-            <Label 
+                <Label 
                 FontAttributes="Bold"
                 FontSize="Large"
                 HorizontalOptions="Center"
                 Text="Lands">
-            </Label>
-            <Image
+                </Label>
+                <Image
                 Source="onu"
                 WidthRequest="200">
-            </Image>
+                </Image>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-                <Label
+                <Grid
+                Margin="0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
                     Grid.Column="0"
                     Grid.Row="0"
-                    Text="Email">
-                </Label>
-                <Entry
+                    Text="Email"
+                    VerticalOptions="Center">
+                    </Label>
+                    <Entry
                     Grid.Column="1"
                     Grid.Row="0"
                     Keyboard="Email"
                     Placeholder="Enter your email...">
-                </Entry>
-                <Label
-                    Grid.Column="1"
-                    Grid.Row="0"
-                    Text="Password">
-                </Label>
-                <Entry
+                    </Entry>
+                    <Label
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Password"
+                    VerticalOptions="Center">
+                    </Label>
+                    <Entry
                     Grid.Column="1"
                     Grid.Row="1"
                     IsPassword="True"
                     Placeholder="Enter your password...">
-                </Entry>
-            </Grid>
-            
-            <ActivityIndicator></ActivityIndicator>
-            
-            <Button
-                BackgroundColor="Navy"
-                BorderRadius="23"
-                Text="Login"
-                TextColor="White">
-            </Button>
-        </StackLayout>
+                    </Entry>
+                </Grid>
+                
+                <ActivityIndicator>
+                </ActivityIndicator>
+
+                <StackLayout
+                Orientation="Horizontal">
+                    <Label
+                    HorizontalOptions="StartAndExpand"
+                    Text="Rememberme on this device"
+                    VerticalOptions="Center">
+                    </Label>
+                    <Switch
+                    HorizontalOptions="End">
+                    </Switch>
+                </StackLayout>
+
+                <Label
+                    Text="Forgot your password"
+                    HorizontalOptions="Center"
+                    TextColor="Blue">
+                </Label>
+                
+                <StackLayout
+                Margin="40,0">
+                    <Button
+                    BackgroundColor="Navy"
+                    BorderRadius="23"
+                    HeightRequest="46"
+                    Text="Login"
+                    TextColor="White">
+                    </Button>
+                    <Button
+                    BackgroundColor="Purple"
+                    BorderRadius="23"
+                    HeightRequest="46"
+                    Text="Register"
+                    TextColor="White">
+                    </Button>
+                </StackLayout>
+                <StackLayout 
+                HorizontalOptions="Center"
+                Orientation="Horizontal">
+                    <Image
+                    WidthRequest="65"
+                    Source="facebookLogo">
+                    </Image>
+                    <Image
+                    WidthRequest="65"
+                    Source="twitterLogo">
+                    </Image>
+                    <Image
+                    WidthRequest="98"
+                    Source="instagramLogo">
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
